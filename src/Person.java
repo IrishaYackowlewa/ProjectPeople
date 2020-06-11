@@ -8,13 +8,21 @@ public class Person {
         this.man = man;
     }
 
+    public String getName (){
+        return name;
+    }
+
+    public String getNameSpouse (){
+        return spouse.name;
+    }
+
     public boolean marry(Person person) {
         if (this.man != person.man){
-            if (this.spouse != null) {
+            if (haveSpouse()) {
                 this.spouse.divorce();
                 divorce();
             }
-            if (person.spouse != null){
+            if (person.haveSpouse()){
                 person.spouse.divorce();
                 person.divorce();
             }
@@ -27,9 +35,13 @@ public class Person {
         }
     }
 
+    public boolean haveSpouse (){
+        return this.spouse != null;
+    }
+
     public boolean divorce() {
-        if (spouse != null){
-            spouse = null;
+        if (this.spouse != null){
+            this.spouse = null;
             return true;
         }
         return false;
