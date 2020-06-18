@@ -3,7 +3,22 @@ import static java.lang.System.*;
 public class Main {
 
     public static void main(String[] args) {
-        Person Lera = new Person(false, "Lera");
+        CountMapIml<Integer> map = new CountMapIml<>();
+
+        map.add(10);
+        map.add(10);
+        map.add(5);
+        map.add(6);
+        map.add(5);
+        map.add(10);
+
+        int count = map.getCount(5); // 2
+        int count2 = map.getCount(6); // 1
+        int count3 = map.getCount(10); // 3*/
+
+        System.out.println(count + " " + count2 + " " + count3);
+        
+        /*Person Lera = new Person(false, "Lera");
         Person Gleb = new Person(true, "Gleb");
         Person Any = new Person(false, "Any");
         Person Tom = new Person(true, "Tom");
@@ -37,6 +52,7 @@ public class Main {
         print(Any);
         print(Tom);
         out.println();
+         */
     }
 
     public static void print(Person person){
